@@ -115,6 +115,8 @@ main_page_content = '''
     <div class="container">
       {movie_tiles}
     </div>
+    <img src="logo.png" />
+    <p>This product uses the TMDb API but is not endorsed or certified by TMDb.<p>
   </body>
 </html>
 '''
