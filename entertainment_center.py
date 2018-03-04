@@ -31,18 +31,18 @@ the_godfather = media.Movie(god_data["title"],
 	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+god_data["poster_path"],
 	"https://www.youtube.com/watch?v="+god_yt_key)
 
-# Fetching 12monkeys data from API service
-tw_obj = urllib2.urlopen("https://api.themoviedb.org/3/movie/63?api_key="+key_api)
-twvid_obj = urllib2.urlopen("https://api.themoviedb.org/3/movie/63/videos?api_key="+key_api)
-tw_data = json.load(tw_obj)
-twvid_data = json.load(twvid_obj)
-for item in twvid_data["results"]:
-    tw_yt_key = item["key"]
+# Fetching fightclub data from API service
+fc_obj = urllib2.urlopen("https://api.themoviedb.org/3/movie/550?api_key="+key_api)
+fcvid_obj = urllib2.urlopen("https://api.themoviedb.org/3/movie/550/videos?api_key="+key_api)
+fc_data = json.load(fc_obj)
+fcvid_data = json.load(fcvid_obj)
+for item in fcvid_data["results"]:
+    fc_yt_key = item["key"]
 
-# Creating 12monkeys object
-twelve_monkeys = media.Movie(tw_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+tw_data["poster_path"],
-	"https://www.youtube.com/watch?v="+tw_yt_key)
+# Creating fightclub object
+twelve_monkeys = media.Movie(fc_data["title"],
+	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+fc_data["poster_path"],
+	"https://www.youtube.com/watch?v="+fc_yt_key)
 
 # Fetching Cuckoo data from API service
 cuck_obj = urllib2.urlopen("https://api.themoviedb.org/3/movie/510?api_key="+key_api)
