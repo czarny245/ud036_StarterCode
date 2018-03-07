@@ -1,16 +1,18 @@
-import media
 import fresh_tomatoes
-import urllib2
 import json
+import media
+import urllib2
 
 key_api = 'fe09bc7261fdf7e9378f67ccbeeb84e1'
+image_url = "https://image.tmdb.org/t/p/w600_and_h900_bestv2/"
+trailer_url = "https://www.youtube.com/watch?v="
 
 # Fetching Gladiator data from API service
 try:
     glad_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/98?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/98?api_key=" + key_api)
     gladvid_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/98/videos?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/98/videos?api_key=" + key_api)
 except urllib2.HTTPError, e:
     checksLogger.error('HTTPError = ' + str(e.code))
 
@@ -22,16 +24,16 @@ for item in gladvid_data["results"]:
 
 # Creating Gladiator object
 gladiator = media.Movie(glad_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+glad_data["poster_path"],
-	"https://www.youtube.com/watch?v="+glad_yt_key)
+                        image_url + glad_data["poster_path"],
+                        trailer_url + glad_yt_key)
 
 # Fetching Godfather data from API service
 try:
     god_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/238?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/238?api_key=" + key_api)
     godvid_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/238/videos?api_key="+key_api)
-    except urllib2.HTTPError, e:
+        "https://api.themoviedb.org/3/movie/238/videos?api_key=" + key_api)
+except urllib2.HTTPError, e:
     checksLogger.error('HTTPError = ' + str(e.code))
 
 god_data = json.load(god_obj)
@@ -42,15 +44,15 @@ for item in godvid_data["results"]:
 
 # Creating Godfather object
 the_godfather = media.Movie(god_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+god_data["poster_path"],
-	"https://www.youtube.com/watch?v="+god_yt_key)
+                            image_url + god_data["poster_path"],
+                            trailer_url + god_yt_key)
 
 # Fetching fightclub data from API service
 try:
     fc_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/550?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/550?api_key=" + key_api)
     fcvid_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/550/videos?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/550/videos?api_key=" + key_api)
 except urllib2.HTTPError, e:
     checksLogger.error('HTTPError = ' + str(e.code))
 
@@ -62,15 +64,15 @@ for item in fcvid_data["results"]:
 
 # Creating fightclub object
 twelve_monkeys = media.Movie(fc_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+fc_data["poster_path"],
-	"https://www.youtube.com/watch?v="+fc_yt_key)
+                             image_url + fc_data["poster_path"],
+                             trailer_url + fc_yt_key)
 
 # Fetching Cuckoo data from API service
 try:
     cuck_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/510?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/510?api_key=" + key_api)
     cuckvid_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/510/videos?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/510/videos?api_key=" + key_api)
 except urllib2.HTTPError, e:
     checksLogger.error('HTTPError = ' + str(e.code))
 
@@ -82,15 +84,15 @@ for item in cuckvid_data["results"]:
 
 # Creating Cuckoo object
 cuckoo_nest = media.Movie(cuck_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+cuck_data["poster_path"],
-	"https://www.youtube.com/watch?v="+cuck_yt_key)
+                          image_url + cuck_data["poster_path"],
+                          trailer_url + cuck_yt_key)
 
 # Fetching Matrix data from API service
 try:
     mat_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/603?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/603?api_key=" + key_api)
     matvid_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/603/videos?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/603/videos?api_key=" + key_api)
 except urllib2.HTTPError, e:
     checksLogger.error('HTTPError = ' + str(e.code))
 
@@ -102,15 +104,15 @@ for item in matvid_data["results"]:
 
 # Creating Matrix object
 the_matrix = media.Movie(mat_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+mat_data["poster_path"],
-	"https://www.youtube.com/watch?v="+mat_yt_key)
+                         image_url + mat_data["poster_path"],
+                         trailer_url + mat_yt_key)
 
 # Fetching American Beauty data from API service
 try:
     ame_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/14?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/14?api_key=" + key_api)
     amevid_obj = urllib2.urlopen(
-    "https://api.themoviedb.org/3/movie/14/videos?api_key="+key_api)
+        "https://api.themoviedb.org/3/movie/14/videos?api_key=" + key_api)
 except urllib2.HTTPError, e:
     checksLogger.error('HTTPError = ' + str(e.code))
 
@@ -122,14 +124,14 @@ for item in amevid_data["results"]:
 
 # Creating American Beauty object
 american_beauty = media.Movie(ame_data["title"],
-	"https://image.tmdb.org/t/p/w600_and_h900_bestv2/"+ame_data["poster_path"],
-	"https://www.youtube.com/watch?v="+ame_yt_key)
+                              image_url + ame_data["poster_path"],
+                              trailer_url + ame_yt_key)
 
 movies = [the_godfather,
-twelve_monkeys,
-the_matrix,
-american_beauty,
-gladiator,
-cuckoo_nest]
+          twelve_monkeys,
+          the_matrix,
+          american_beauty,
+          gladiator,
+          cuckoo_nest]
 
 fresh_tomatoes.open_movies_page(movies)
